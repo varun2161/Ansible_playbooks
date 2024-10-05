@@ -1,0 +1,13 @@
+---
+- name: Creating multi users
+  hosts: all
+  become: yes
+  tasks:
+    - name: multi users
+      user:
+        name: '{{ item }}'
+        state: present
+      with_items:
+        - Raj
+        - sai
+        - varun

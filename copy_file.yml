@@ -1,0 +1,11 @@
+---
+- name: Test Playbook for copy file
+  hosts: all
+  become: True
+  tasks:
+  - name: Copying file to Destination
+    copy:
+      src: index.html
+      dest: /var/www/html/
+      owner: varun
+      

@@ -1,0 +1,16 @@
+---
+- name: Install package based on flavour
+  hosts: all
+  become: yes
+  tasks:
+  - name: Install httpd package for Redhat family
+    yum:
+     name: httpd
+     state: present
+    when: ansible_os_family == "Debian"
+
+  - name: start httpd service
+    service:
+      name: httpd
+      state: started
+    when: ansible_os_family == "RedHat"

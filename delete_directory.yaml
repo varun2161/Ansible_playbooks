@@ -1,0 +1,9 @@
+---
+# - name: Playbook to delete the directory
+- hosts: all
+  become: true
+  tasks: 
+  - name: delete the testfolder named directory under home folder
+    file:
+      name: /home/ansadmin/test-folder
+      state: absent

@@ -1,0 +1,13 @@
+---
+- name: Delete Multi Users
+  hosts: all
+  become: yes
+  tasks:
+    - name: Delete 3 users
+      user:
+        name: '{{ item }}'
+        state: absent
+      with_items:
+        - raj
+        - varun
+        - sai

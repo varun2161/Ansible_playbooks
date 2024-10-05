@@ -1,0 +1,9 @@
+---
+- name: Playbook for service module
+  hosts: all
+  become: true
+  tasks:
+  - name: to start the httpd service
+    service:
+     name: httpd
+     state: started

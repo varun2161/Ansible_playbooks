@@ -1,0 +1,11 @@
+---
+- name: Creating users with variable file
+  become: yes
+  hosts: all
+  vars_files:
+    - user.yaml
+  tasks:
+    - name: Create user {{user1}}
+      user:
+        name: "{{user1}}"
+        state: present

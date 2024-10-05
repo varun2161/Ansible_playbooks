@@ -1,0 +1,11 @@
+---
+- name: Create usr with varaible
+  hosts: all
+  become: yes
+  vars:
+    user: sunny
+  tasks:
+    - name: create user {{user}}
+      user:
+        name: "{{user}}"
+        state: present

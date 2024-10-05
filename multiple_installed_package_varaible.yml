@@ -1,0 +1,10 @@
+---
+- name: package install through varaible
+  hosts: all
+  become: true
+  tasks:
+  - name: installing git and tree
+    user:  name='{{ item }}' state=present
+    with_items:
+       - Rajuu
+       - tarun

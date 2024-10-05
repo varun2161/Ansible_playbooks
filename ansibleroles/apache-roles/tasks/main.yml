@@ -1,0 +1,15 @@
+---
+# tasks file for apache-roles
+- name: install {{httpd_package_name}} on redhat
+  yum:
+    name: "{{httpd_package_name}}"
+    state: installed
+  notify: start httpd service
+  when: ansible_os_family == "RedHat"
+
+- name: install {{apache2_package_name}} on debian
+  apt:
+   name: "{{apache2_package_name}}"
+   state: installed
+  notify: start apache2 service
+  when: ansible_os_family == "Debian"

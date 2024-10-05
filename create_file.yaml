@@ -1,0 +1,9 @@
+---
+- name: Playbook to create the file
+  hosts: all
+  become: True
+  tasks:
+  - name: Create file in tmp directory
+    file:
+     path: /home/ansadmin/test-folder
+     state: directory  

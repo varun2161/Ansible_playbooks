@@ -1,0 +1,10 @@
+---
+- name: Playbook to install the package
+  hosts: all
+  become: yes
+  tasks:
+    - name: install tree package
+      yum:
+        name: httpd
+        state: absent
+        

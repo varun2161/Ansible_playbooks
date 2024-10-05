@@ -1,0 +1,19 @@
+---
+- name: Complete web app
+  hosts: all
+  become: yes
+  tasks:
+  - name: Install webpack
+    yum:
+     name: httpd
+     state: present
+   
+  - name: Starting service
+    service:
+      name: httpd
+      state: started
+
+  - name: Copying HTML file
+    copy:
+      src: index.html
+      dest: /var/www/html/index.html
